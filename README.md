@@ -1,5 +1,6 @@
-# Useful for removing punctuation marks from multi-language sources or from text that may contain non-standard punctuation marks (such as emojis and pictographs).
-# Tested in English, Japanese, Chinese, and Korean.
+# Useful for removing punctuation marks from multi-language sources or from text that may contain non-standard punctuation marks (such as emojis and pictographs). Tested in English, Japanese, Chinese, and Korean.
+
+'''python
 
 from ml_punct_norm.normalizer import is_punct, strip_punct, replace_punct 
 
@@ -92,3 +93,6 @@ print(replace_punct(multiple_punct_str))
 
 #Example in which multiple punctuation marks are used in a row, with replacement passed as " <PUNCT> ".
 print(replace_punct(multiple_punct_str, replacement = " <PUNCT> "))
+
+
+'''
