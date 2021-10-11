@@ -1,5 +1,5 @@
-## Useful for removing punctuation marks from multi-language sources or from text that may contain non-standard punctuation marks (such as emojis and pictographs).
-## Tested in English, Japanese, Chinese, and Korean.
+# Useful for removing punctuation marks from multi-language sources or from text that may contain non-standard punctuation marks (such as emojis and pictographs).
+# Tested in English, Japanese, Chinese, and Korean.
 
 from ml_punct_norm.normalizer import is_punct, strip_punct, replace_punct 
 
