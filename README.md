@@ -1,23 +1,5 @@
-A light-weight sentence tokenizer for Japanese.
-
-
-Sample Code:
-
-from ja_sentence.tokenizer import tokenize
-
-paragraph_str = "えー！？くれるの？本当にいいの…？嬉しい！！"
-
-sentence_list = tokenize(input_str)
-
-for sentence in sentence_list:
-	print(sentence)
-
-'''
-- Useful for removing punctuation marks from multi-language sources or from text that may contain non-standard punctuation marks (such as emojis and pictographs).
-- Tested in English, Japanese, Chinese, and Korean.
-
-
-'''
+## Useful for removing punctuation marks from multi-language sources or from text that may contain non-standard punctuation marks (such as emojis and pictographs).
+## Tested in English, Japanese, Chinese, and Korean.
 
 from ml_punct_norm.normalizer import is_punct, strip_punct, replace_punct 
 
