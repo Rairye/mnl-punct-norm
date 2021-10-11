@@ -70,8 +70,9 @@ input_str is the string in which punctuation marks are to be replaced. input_str
 Optional arguments -> input_skips, replacement
 input_skips is a string containing a sequence of punctuation marks that are not to be replaced with the replacement string. input_skips must be passed as a str type. 
 
-replacement is a string that is used to replace punctuation marks (a half-width space by default). replacement must be specified as a str type. Note: If the replacement string follows a space or other substring that is equal to the replacement string, the replacement string will not be added (to avoid creating extra spaces/substrings in the string returned by the function). Also, in cases where multiple punctuations marks are used sequentially,
-only a single instance of the replacement string will be used.
+replacement is a string that is used to replace punctuation marks (a half-width space by default). 
+replacement must be specified as a str type. Note: If the replacement string follows a space or other substring that is equal to the replacement string, the replacement string will not be added (to avoid creating extra spaces/substrings in the string returned by the function). 
+Also, in cases where multiple punctuations marks are used sequentially, only a single instance of the replacement string will be used.
 
 Note: There may be leading/trailing spaces in the string returned by the function, so you may want to use the strip() method if necessary.
 
