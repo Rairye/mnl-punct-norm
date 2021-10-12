@@ -1,5 +1,12 @@
 # Useful for removing punctuation marks from various natural languages and from text that may contain non-standard punctuation marks (such as emojis and pictographs). Tested with English, Japanese, Chinese, and Korean.
 
+# Installation
+
+```python
+pip install mnl-punct-norm
+```
+
+
 ```python
 
 from mnl_punct_norm.normalizer import is_punct, strip_punct, replace_punct 
