@@ -50,7 +50,7 @@ input_skips must be passed as a str type.
 
 ```python
 
-source_str = "This light-weight module, which also provides multi-language support, normalizes punctuation in strings."
+source_str = "This light-weight module, which provides multi-language support, normalizes punctuation in strings."
 
 #Strips all punctuation from source_str.
 print(strip_punct(source_str))
