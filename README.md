@@ -2,7 +2,7 @@
 
 ```python
 
-from ml_punct_norm.normalizer import is_punct, strip_punct, replace_punct 
+from mnl_punct_norm.normalizer import is_punct, strip_punct, replace_punct 
 
 ```
 
@@ -76,7 +76,7 @@ print(strip_punct(japanese_str, "（）"))
 This function replaces all punctuation marks in a string with either a half-width space (default) or a user-specified string.
 
 Required argument -> input_str
-input_str is the string in which punctuation marks are to be replaced. input_str must be specified as a str type.
+input_str is the string in which punctuation marks are to be replaced. input_str must be passed as a str type.
 
 Optional arguments -> input_skips, replacement
 input_skips is a string containing a sequence of punctuation marks that are not to be replaced with the replacement string. 
@@ -85,7 +85,7 @@ input_skips must be passed as a str type.
 
 replacement is a string that is used to replace punctuation marks (a half-width space by default). 
 
-replacement must be specified as a str type. 
+replacement must be passed as a str type. 
 
 Note: If the replacement string follows a space or other substring that is equal to the replacement string, the replacement string will not be added (to avoid creating extra spaces/substrings in the string returned by the function). 
 
