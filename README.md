@@ -123,3 +123,23 @@ print(replace_punct(multiple_punct_str, replacement = " <PUNCT> "))
 
 
 ```
+
+## Use Case: Removing non-standard punctuation marks while keeping standard punctuation marks
+
+There may be cases where you may only want to remove non-standard punctuation marks (such as in text taken from reviews, comment sections, or other places on the Web).
+
+```python
+import string
+from mnl_punct_norm.normalizer import strip_punct
+
+#Standard English punctuation marks.
+english_punct = string.punctuation
+print(english_punct)
+
+#Source string containing both standard and non-standard punctuation marks.
+source_str = "★♡▲ Have a nice day!! ★♡▲"
+
+#Non-standard punctuation marks are removed, while the standard punctuation marks remain.
+print(strip_punct(source_str, english_punct))
+
+```
