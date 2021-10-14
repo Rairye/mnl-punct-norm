@@ -126,7 +126,7 @@ print(replace_punct(multiple_punct_str, replacement = " <PUNCT> "))
 
 ## Use Case: Removing non-standard punctuation marks while keeping standard punctuation marks
 
-There may be cases where you may only want to remove non-standard punctuation marks (such as in text taken from reviews, comment sections, or other places on the Web).
+There may be cases where you only want to remove non-standard punctuation marks (such as in text taken from reviews, comment sections, or other places on the Web).
 
 ```python
 import string
