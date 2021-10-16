@@ -85,9 +85,11 @@ print(strip_punct(japanese_str, "（）"))
 This function replaces all punctuation marks in a string with either a half-width space (default) or a user-specified string.
 
 Required argument -> input_str
+
 input_str is the string in which punctuation marks are to be replaced. input_str must be passed as a str type.
 
 Optional arguments -> input_skips, replacement
+
 input_skips is a string containing a sequence of punctuation marks that are not to be replaced with the replacement string. 
 
 input_skips must be passed as a str type. 
