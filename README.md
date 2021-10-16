@@ -36,7 +36,7 @@ print("Hiragana character is_punct -> {}".format(is_punct("あ")))
 #Kanji
 print("Kanji character is_punct -> {}".format(is_punct("私")))
 
-#Emoji example
+#Pictograph example
 print("★ is_punct -> {}".format(is_punct("★")))
 
 ```
