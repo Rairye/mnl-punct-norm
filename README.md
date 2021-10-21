@@ -33,6 +33,10 @@ print("Full-width period is_punct -> {}".format(is_punct("。")))
 #Hiragana character
 print("Hiragana character is_punct -> {}".format(is_punct("あ")))
 
+# Other languages
+
+JavaScript -> https://github.com/Rairye/js-mnl-punct-norm
+
 #Kanji
 print("Kanji character is_punct -> {}".format(is_punct("私")))
 
