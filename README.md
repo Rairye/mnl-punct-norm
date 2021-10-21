@@ -149,3 +149,7 @@ source_str = "★♡▲ Have a nice day!! ★♡▲"
 print(strip_punct(source_str, english_punct))
 
 ```
+
+## Other languages
+
+JavaScript -> https://github.com/Rairye/js-mnl-punct-norm
