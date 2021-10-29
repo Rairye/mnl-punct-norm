@@ -11,7 +11,7 @@ pip install mnl-punct-norm
 
 ```python
 
-from mnl_punct_norm.normalizer import is_punct, strip_punct, replace_punct 
+from mnl_punct_norm.normalizer import is_punct, strip_outer_punct, strip_punct, replace_punct 
 
 ```
 
@@ -38,6 +38,19 @@ print("Kanji character is_punct -> {}".format(is_punct("私")))
 
 #Pictograph example
 print("★ is_punct -> {}".format(is_punct("★")))
+
+```
+
+## strip_outer_punct(word)
+
+Strips outside punctuation (stops at alphanumeric character or whitespace character).
+
+```python
+source1 = "(((((((hey-buddy-how-is-it-going))))))"
+print(strip_outer_punct(source1))
+
+source2 = "(x=3-2)"
+print(strip_outer_punct(source2))
 
 ```
 
