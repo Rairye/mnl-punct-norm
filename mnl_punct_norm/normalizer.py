@@ -23,6 +23,36 @@ def is_punct(char):
 
     return ((char.isalpha() or char.isnumeric()) or char.isspace()) == False
 
+def strip_outer_punct(word):
+    if type(word) != str:
+        return word
+
+    i = 0
+
+    while i < len(word):
+        if is_punct(word[i]):
+            i+=1
+        else:
+            break
+
+    if i > 0:
+        word = word[i:]
+
+    last_char_index = len(word) -1
+    j = last_char_index
+
+    while j >=0:
+        if is_punct(word[j]):
+            j-=1
+        else:
+            break
+
+    if j < last_char_index:
+        return word[:j+1]
+
+    return word
+
+
 def get_category(char):
     if char.isspace():
         return "SPACE"
@@ -30,33 +60,50 @@ def get_category(char):
     return "PUNCT" if is_punct(char) else "NOTPUNCT"
 
 def normalize_punct(input_str, mode, input_skips = "", replacement = " "):
-    result = ""
+    result = []
     skips = [] if type(input_skips) != str else set([char for char in input_skips])
     replacement = replacement if type(replacement) == str else " "
-    last_space = None
     last_replacement = None
+    last_char = ""
+    last_category = ""
+    string_len = len(input_str)
 
-    for i in range(len(input_str)):
-        char = input_str[i]
-        current_category = get_category(char)
+    for i in range(string_len):
+        current_char = input_str[i]
+        current_category = get_category(current_char)
 
-        if current_category == "PUNCT" and char not in skips:
-            if mode == "REPLACE" and ((last_space == None and last_replacement == None) or ((last_space != i-1 and input_str[i-1] != replacement) and (last_replacement != i-1 and not result.endswith(replacement)))):
-                result+=replacement
+        if current_category == "PUNCT" and current_char not in skips:
+            if mode == "REPLACE":
+                if (last_char != replacement and last_category != "SPACE") or last_replacement == None:
+                    result.append((input_str[0 if last_replacement == None else last_replacement + 1: i] + replacement))
+                    
+                else:
+                    result.append(input_str[0 if last_replacement == None else last_replacement + 1: i])
+
                 last_replacement = i
-                last_space = i
+                last_char = replacement
+                last_category = "REPLACEMENT"
+                continue
+                                    
+            else:
+                if last_replacement == None or (last_replacement != None and i - last_replacement > 1):
+                    result.append(input_str[0 if last_replacement == None else last_replacement+1:i])
+                    last_replacement = i
 
-            continue
-            
         if current_category == "SPACE" and mode == "REPLACE":
-            last_space = i
+            if last_category == "REPLACEMENT":
+                last_replacement = i
 
-            if result.endswith(char) and (last_replacement == i-1):
-                    continue
+        last_char = current_char
+        last_category = current_category
+               
+    if last_replacement == None:
+        return input_str
 
-        result+=char    
-
-    return result
+    if last_replacement < string_len - 1:
+        result.append(input_str[last_replacement+1:])
+    
+    return "".join(result)
 
 def strip_punct(input_str, input_skips = ""):
     if type(input_str) != str:
