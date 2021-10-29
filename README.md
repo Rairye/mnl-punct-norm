@@ -43,7 +43,7 @@ print("★ is_punct -> {}".format(is_punct("★")))
 
 ## strip_outer_punct(word)
 
-Strips outside punctuation (stops at alphanumeric character or whitespace character).
+Strips leading and trailing punctuation (stops at alphanumeric character or whitespace character).
 
 ```python
 source1 = "(((((((hey-buddy-how-is-it-going))))))"
