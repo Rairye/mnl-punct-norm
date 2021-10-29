@@ -49,7 +49,7 @@ Strips leading and trailing punctuation (stops at alphanumeric character or whit
 source1 = "(((((((hey-buddy-how-is-it-going))))))"
 print(strip_outer_punct(source1))
 
-source2 = "(x=3-2)"
+source2 = "x=3-2"
 print(strip_outer_punct(source2))
 
 ```
