@@ -89,6 +89,9 @@ def normalize_punct(input_str, mode, input_skips = "", replacement = " "):
                 if last_replacement == None or (last_replacement != None and i - last_replacement > 1):
                     result.append(input_str[0 if last_replacement == None else last_replacement+1:i])
                     last_replacement = i
+                    
+                if last_replacement == i-1:
+                    last_replacement = i
 
         if current_category == "SPACE" and mode == "REPLACE":
             if last_category == "REPLACEMENT":
